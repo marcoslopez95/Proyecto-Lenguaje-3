@@ -27,11 +27,11 @@ class CiudadController extends Controller
         $ciudad->NombreCiudad = $request->input('ciudad');
         $ciudad->idEstado = $request->input('estado');
         $ciudad->save();
-         return redirect()->route('reporte');
-         $join = Ciudad::select('ciudades.NombreCiudad','estados.NombreEstado')->join('estados','ciudades.idEstado','=','estados.idEstado')->get();
+        //  return redirect()->route('reporte');
+         
             $data = [
                 "status" => 'succesfull',
-                "content" => $join
+                "content" => $ciudad
             ];
         }
 
